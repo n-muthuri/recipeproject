@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="bg-light p-5 rounded-lg text-center"><br><br>
+  <h1 class="display-4">Welcome to Flavor Fusion Recipe Sharing Platform<i class="bi bi-emoji-smile-fill custom-icon"></i></h1>
+    <img src="{% static 'img/community.jpeg' %}" alt="Image">
+  <p class="lead" style="color: green">Discover and share your favorite recipes with the world.</p>
+    <p style="color: green">Imagine a place where you can explore a world of culinary possibilities. At Flavor Fusion, we offer a vast library of recipes that are just waiting for you to discover. 
+        From quick and easy weeknight dinners to elaborate gourmet feasts, you'll find endless inspiration to keep your meals exciting and delicious.</p>
+  <a href="{% url 'my_create_recipe' %}" class="btn btn-primary btn-lg">Share a Recipe</a>
+</div>
+
+<div class="row mt-4">
+  {% for recipe in recipes %}
+    <div class="col-md-4">
+      <div class="card mb-4">
+        <div class="card-body">
+          <h5 class="card-title text-primary">{{ recipe.title }}</h5>
+          <p class="card-text text-muted">{{ recipe.description|truncatewords:800 }}</p>
+          <a href="{% url 'my_update_recipe' recipe.id %}" class="btn btn-outline-secondary btn-sm">Edit</a>
+          <a href="{% url 'my_delete_recipe' recipe.id %}" class="btn btn-outline-danger btn-sm">Delete</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+    
+   
+{% endblock %}

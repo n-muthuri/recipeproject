@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Our Blog{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+  <h1 class="text-center mb-4">Our Recipes</h1><br><br>
+  <div class="row">
+  
+    {% for blog in blogs %}
+      <div class="col-md-4">
+        <div class="card mb-4 shadow-sm">
+          {% if blog.image %}
+            <img src="{{ blog.image.url }}" class="card-img-top" alt="{{ blog.title }}">
+          {% else %}
+            <img src="{% static 'img/healthy4.jpg' %}" class="card-img-top" alt="Default image">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{ blog.title }}</h5>
+            <p class="card-text">{{ blog.content|truncatewords:150 }}</p>
+            <a href="#" class="btn btn-primary btn-sm">Read More</a>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <p class="text-center">Stay tuned for updates!</p>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<h2 class="text-center">Register</h2><br><br>
+    <div class="section-header col-6 text-success">
+                        <h2 style="color: #dc3545">Explore, Create, and Connect!</h2><br>
+                        <p>Join the Ultimate Recipe Community!<i class="bi bi-emoji-smile-fill custom-icon"></i></p>
+    
+                    </div>
+                    <div class="about-text col-lg-12 text-center">
+                        <p style="color: deeppink">
+                            Ready to transform your kitchen experience?
+                        </p>
+                        <p style="color: green">
+                           Join our vibrant community of food lovers today! Discover new recipes, share your culinary creations, and connect with fellow enthusiasts who are as passionate about cooking as you are.
+                            Sign up now and start your culinary adventure!
+                        </p>
+                    </div>
+    
+<div class="card w-50 mx-auto mt-4">
+  <div class="card-body">
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit" class="btn btn-success w-100">Register</button>
+    </form>
+  </div>
+</div>
+    
+                    
+{% endblock %}

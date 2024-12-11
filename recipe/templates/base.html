@@ -1,0 +1,142 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Flavor Fusion{% endblock %}</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/flaticon/font/flaticon.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+  {% block navbar %}
+   <!-- Navbar Start -->
+  <nav class="navbar navbar-expand-lg navbar-default bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">Flavour Fusion</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+          <li>
+          <a class="nav-link" href="{% url 'my_index' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'my_about' %}">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'my_contact' %}">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'my_blog' %}">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'my_register' %}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'my_login' %}">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    
+    <!-- Navbar End -->
+  {% endblock %}
+
+  <div class="container mt-4">
+    {% block content %}{% endblock %}
+  </div>
+
+  <!-- Footer Start -->
+<div class="footer">
+    <div class="container ">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="footer-contact">
+                            <h2>Our Address</h2>
+                            <p><i class="bi bi-geo-alt"></i>00100 Nairobi,Kenya</p>
+                            <p><i class="bi bi-telephone-forward"></i>+254 712547789</p>
+                            <p><i class="bi bi-envelope-open-heart"></i>Flavor Fusion@gmail.com</p>
+                            <div class="footer-social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-youtube"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                 <div class="col-md-6">
+                                <div class="footer-link">
+                                    <h2>Quick Links</h2>
+                                   <i class="bi bi-chat-heart custom-icon">Terms of Use</i><br>
+                                   <i class="bi bi-chat-heart custom-icon">Privacy policy</i><br>
+                                   <i class="bi bi-chat-heart custom-icon">Cookies</i><br>
+                                   <i class="bi bi-chat-heart custom-icon">Help</i><br>
+                                   <i class="bi bi-chat-heart custom-icon">Q&As</i><br>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+            <div class="col-lg-5">
+                <div class="footer-newsletter">
+                    <h2>Newsletter</h2>
+                    <p style="color: blueviolet">
+                        Get the latest recipes and cooking tips delivered straight to your inbox.
+                    </p>
+                    <div class="form">
+                        <input class="form-control" placeholder="Email goes here">
+                        <button class="btn custom-btn btn-outline-secondary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <p>Copyright &copy; <a href="#">Flavor Fusion</a>,2024</p>
+        </div>
+{#        <p>Designed By <a href="https://htmlcodex.com">HTML Codex</a></p>#}
+    </div>
+</div>
+<!-- Footer End -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+  <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'lib/tempusdominus/js/moment.min.js' %}"></script>
+  <script src="{% static 'lib/tempusdominus/js/moment-timezone.min.js' %}"></script>
+  <script src="{% static 'lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+
+<!-- Contact Javascript File -->
+<script src="{% static 'mail/jqBootstrapValidation.min.js' %}"></script>
+<script src="{% static 'mail/contact.js' %}"></script>
+
+<!-- Template Javascript -->
+<script src="{% static 'js/main.js' %}"></script>
+
+<!-- Bootstrap JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
